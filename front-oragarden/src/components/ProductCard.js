@@ -7,7 +7,13 @@ export default function ProductCard(props) {
   const { products } = props;
 
   return (
-    <div key={products.id} className="card">
+<div>
+  5
+</div>
+  );
+}
+ /*
+  <div key={products.id} className="card">
       <Link to={`/products/${products.id}`}>
         <Card hoverable
         style={{ width:250 }}
@@ -21,5 +27,4 @@ export default function ProductCard(props) {
         </Card>
       </Link>
     </div>
-  );
-}
+*/

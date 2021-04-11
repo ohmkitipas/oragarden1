@@ -5,6 +5,7 @@ import NavBar from "../NavBar";
 import ProductCard from "../ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "antd";
+import ProductCard2 from "../component/ProductCard";
 
 export default function Product(props) {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ export default function Product(props) {
         <NavBar />
       </div>
       <div>
+        <ProductCard2 />
+      </div>
+      <div>
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
@@ -33,6 +37,7 @@ export default function Product(props) {
             {products.map((products) => (
               <ProductCard key={products.id} products={products} />
               ))}
+              <ProductCard/>
               </Col>
               </Row>
           </div>

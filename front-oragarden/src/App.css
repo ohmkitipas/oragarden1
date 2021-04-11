@@ -1,17 +1,212 @@
 @import '~antd/dist/antd.css';
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Chonburi', cursive;
+  z-index: 10;
 }
 
-.App{
-  text-align: center;
+.bg-white{
+  background-color: #ffffff;
+   
 }
 
-img{
+/* navBar */
+.menuBar {
+  display: flex;
+  padding: 0 35px 0 20px;
+  overflow: auto;
+  box-shadow: 0 0 5px black;
+  background-color: white;
+  height: 100px;
+}
+
+.logo{
+  display: flex;
+  float: right;
+  margin-left: 50px;
+}
+
+.logo img{
+  display: inline-block;
+  width: auto;
+  height: 70px;
+}
+
+.menuCon{
+  width: calc(100% - 150px);
+  float: left;
+  align-self: center;
+
+}
+
+.menuCon * {
+ 
+  color: #000;
+  font-size: 20px;
   
+}
+
+.menuCon .ant-menu-submenu-title {
+  padding: 10px 10px;
+  color: #000;
+  font-size: 20px;
+}
+
+.menuCon .ant-menu-item a,
+.menuCon .ant-menu-submenu-title a {
+  padding: 10px 0px
+}
+
+.menuCon .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+
+.menuCon .leftMenu {
+  float: left;
+}
+
+.menuCon .rightMenu {
+  padding-right: 2.5rem;
+  float: right;
+}
+
+
+.barMenu{
+  float: left;
+  height: 32px;
+  padding: 6px;
+  align-self: center;
+  display: none;
+  background: none;
+}
+
+.barsBtn {
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: relative;
+}
+
+.barsBtn:after,
+.barsBtn:before {
+  content: attr(x);
+  width: 20px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  background: #1890ff;
+}
+
+.barsBtn:after {
+  top: auto;
+  bottom: -6px;
+}
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+.barsMenu>span {
+  display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
+  display: inline-block;
+  width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .barsMenu {
+    display: inline-block;
+  }
+
+  .leftMenu,
+  .rightMenu {
+    display: none;
+  }
+
+  .logo img {
+    margin-left: -20px;
+  }
+
+  .menuCon .ant-menu-item,
+  .menuCon .ant-menu-submenu-title {
+    padding: 1px 20px;
+  }
+
+  .logo img {
+    padding: 10px 20px;
+  }
+}
+
+/* end Nav */
+
+/* card */
+.productCard{
+  display: inline-block;
+  border: 0.1rem solid #c0c0c0;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.cardBody{
+  padding: 1rem;
+}
+
+.cardBody *{
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1rem;
+}
+
+.medium{
+  height: auto;
+  border-bottom: black solid 0.01rem;
+  padding-bottom: 5px;
+  max-width: 20rem;
+  width: 100%;
+}
+/* end card */
+
+.navBar{
+  display: flexbox;
+  z-index: initial ;
+  position: -webkit-sticky;
+  height: 100px;
+}
+.leftTest{
+  display: flex;
+  color: #fff;
+}
+.leftNav{
+  display: flex;
+  background-color: white;
+
+}
+
+.imgLogoNav{
+  justify-content: start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .sticky {
@@ -20,44 +215,7 @@ img{
   top: 0px;
 }
 
-.menuBar{
-  padding: 0 20px;
-  background-color: #335135;
-  border-bottom: solid 1px #e8e8e8;
-  overflow: auto;
-  box-shadow: 0 0 30px whitesmoke;
-}
 
-.logo{
-  width: 150px;
-  float: left;
-}
-
-.menuCon{
-  width: calc(100% - 150px);
-  float: left;
-}
-
-.menuCon .ant-menu-item{
-  padding: 0px 5px;
-}
-.menuCon .ant-menu-submenu-title{
-  padding: 10px 20px;
-}
-.menuCon .ant-menu-item a, .menuCon .ant-menu-submenu-title a{
-  padding: 10px 15px;
-}
-.menuCon .ant-menu-horizontal{
-  border-bottom: none;
-}
-
-.menuCon .midMenu{
-  float: center;
-}
-
-.menuCon .rightMenu{
-  float: right;
-}
 .Banner {
   display: flex;
   align-items: center;
@@ -73,8 +231,6 @@ img{
    justify-content: center;
 }
 
-
-
 .bannerBg {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.01),
@@ -86,15 +242,130 @@ img{
 
 }
 
-.container{
+.containerMainPageRight{
   display: flexbox;
-  padding: 10px;
   justify-content: center;
   align-content: center;
-  border-style: solid;
-  border-color: crimson;
-  border-width: 10px;
-  overflow: auto;
+  border-top-style: solid;
+  border-color: black;
+  border-width: 0.3vh;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+  
+  }
+
+.container  {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.containerMainPageLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-top-style: solid;
+  border-color: black;
+  border-width: 0.3vh;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+  
+  }
+
+
+.containerMainPageLeft h1{
+  font-size: 8vh;
+  margin-left: 5vh;
+}
+
+.btn-Main{
+  background-color: rgba(288,255,78,1);
+  border: solid black 0.1px;
+  color: #000;
+  width: 15vh;
+  height: 5vh;
+  justify-content: start;
+  margin-left: 5vh;
+}
+
+.btn-Main p {
+  font-size: 2vh;
+  color: #000;
+  text-align: start;
+  align-items: flex-start;
+  margin-top: -2vh;
+
+
+}
+
+.gapMain{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vh;
+  position: relative;
+  overflow: cover;
+}
+
+.gapMain2{
+  display: block;
+  justify-content: center;
+  margin-top: 10vh;
+  height: 350px;
+  background-color: rgba(45, 109, 88, 0.644);  
+}
+
+.indexCard1{
+  display: inline-flex;
+  margin: 10px 0px 0px 0px;
+}
+
+.indexCard1 img{
+  width: auto;
+  height: 550px;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.indexCard1:hover  img{
+  opacity: 0.5;
+}
+.btnCard{
+  background-color: rgba(288,255,78,1);
+}
+.textCardIndex{
+  justify-content: center;
+  background-color: rgba(288,255,78,1);
+}
+
+.textCardIndex h2{
+  text-align: center;
+  justify-content: center;
+  padding: 0px,2px,0px,  2px;
+
+}
+
+.title1 {
+  display: flexbox;
+  padding-top: 100px;
+  
+}
+
+.title1 h1{
+  font-size: 50px;
+  justify-content: center;
+}
+
+.title1 h2{
+  font-size: 25px;
+  padding-left: 275px;
+  color: #636262;
 }
 
 .textBoxCover{
@@ -115,6 +386,7 @@ img{
   text-shadow: 4px 4px 2vh #000000;
   
 }
+
 
 .carousel{
   display: flex;
@@ -157,7 +429,7 @@ img{
 }
 
 .App-link {
-  color: #61dafb;
+  color: #335135;
 }
 
 @media(max-width: 767px){
@@ -179,6 +451,7 @@ img{
 }
 
 .footer {
+  display: block;
   margin: 0;
   padding: 0;
   background-color: #335135;
@@ -206,3 +479,46 @@ img{
 .title {
   text-align: start;
 }
+
+/*
+
+.menuBar{
+  padding: 0 20px;
+  background-color: #335135;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 0 30px whitesmoke;
+}
+
+.logo{
+  width: 150px;
+  float: left;
+}
+
+.menuCon{
+  width: calc(100% - 150px);
+  float: left;
+}
+
+.menuCon .ant-menu-item{
+  padding: 0px 5px;
+}
+.menuCon .ant-menu-submenu-title{
+  padding: 10px 20px;
+}
+.menuCon .ant-menu-item a, .menuCon .ant-menu-submenu-title a{
+  padding: 10px 15px;
+}
+.menuCon .ant-menu-horizontal{
+  border-bottom: none;
+}
+
+.menuCon .midMenu{
+  float: center;
+}
+
+.menuCon .rightMenu{
+  float: right;
+}
+
+*/

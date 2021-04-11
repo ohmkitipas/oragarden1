@@ -38,7 +38,7 @@ const registerUser = async (req, res) => {
     }
 };
 
-const loginUser = (req, res) => {
+const loginUser = async (req, res) => {
     const { email, password } = req.body;
     const targetUser = await db.User.findOne({ where: {email :email } });
     if (!targetUser) {

@@ -3,7 +3,8 @@ import React from 'react';
 import { logo } from '../picture/logo.jpg';
 
 
-export default function Footer() {
+
+export default function Footer(props) {
     return (
         <div className="footer">
             <Row justify="center">
